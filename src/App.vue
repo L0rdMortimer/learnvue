@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <div class="container">
+    <section class="section">
     <input type="text" v-model="message" @keypress.enter="addItem">
-    <button @click="addItem">Add</button>
+    <button class="button is-success"@click="addItem">Add</button>
     <item-list title="All Items" :items="items"></item-list>
     <item-list title="Done Items" :items="doneItems"></item-list>
     <item-list title="To Do Items" :items="toDoItems"></item-list>
+    </section>
   </div>
 </template>
 
