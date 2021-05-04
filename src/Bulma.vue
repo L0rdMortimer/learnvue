@@ -1,13 +1,17 @@
 <template>
   <div class="container">
     <section class="section">
-      <button class="button is-primary">Add</button>
+      <button class="button is-primary" @click="modalActive=true">Add</button>
     </section>
-    <ul>
-      <li>k</li>
-      <li>k</li>
-      <li>k</li>
-    </ul>
+    <div class="modal is-active" v-if="modalActive">
+      <div class="modal-background" @click="modalActive=false"></div>
+      <div class="modal-content">
+        <p class="image is-4by3">
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
+        </p>
+      </div>
+      <button class="modal-close is-large" aria-label="close" @click="modalActive=false">Modal button</button>
+    </div>
   </div>
 </template>
 
@@ -15,7 +19,9 @@
 export default {
   name: "Bulma",
   data(){
-
+    return {
+      modalActive: false
+    }
   }
 }
 </script>
